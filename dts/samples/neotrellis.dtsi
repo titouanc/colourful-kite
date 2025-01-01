@@ -1,0 +1,22 @@
+#include <zephyr/dt-bindings/led/led.h>
+
+&seesaw_i2c {
+    neotrellis: seesaw@2e {
+        compatible = "adafruit,seesaw";
+        reg = <0x2e>;
+        status = "okay";
+
+        neotrellis_keypad: keypad {
+            compatible = "adafruit,seesaw-keypad";
+            status = "disabled";
+        };
+
+        neotrellis_leds: neopixel {
+            compatible = "adafruit,seesaw-neopixel";
+            status = "disabled";
+            output-pin = <3>;
+            chain-length = <16>;
+            color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+        };
+    };
+};

@@ -1,0 +1,6 @@
+seesaw_i2c: &arduino_i2c {};
+#include <samples/seesaw-attiny817.dtsi>
+
+&seesaw_gpio {
+    status = "okay";
+};

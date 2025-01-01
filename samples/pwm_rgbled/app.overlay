@@ -1,0 +1,16 @@
+seesaw_i2c: &arduino_i2c {};
+#include <samples/seesaw-attiny817.dtsi>
+
+&seesaw_pwm {
+    status = "okay";
+};
+
+/ {
+    pwm_leds {
+        compatible = "pwm-leds";
+
+        pwm_led: pwm-led {
+            pwms = <&seesaw_pwm 0 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
+        };
+    };
+};

@@ -1,0 +1,58 @@
+config SEESAW
+	bool "Adafruit Seesaw module"
+	default y
+	depends on I2C && DT_HAS_ADAFRUIT_SEESAW_ENABLED
+	help
+	  Enable support for Adafruit seesaw module (core driver)
+
+if SEESAW
+
+module = SEESAW
+module-str = seesaw
+source "subsys/logging/Kconfig.template.log_config"
+
+config SEESAW_GPIO
+	bool "Seesaw GPIO"
+	default y
+	depends on DT_HAS_ADAFRUIT_SEESAW_GPIO_ENABLED
+	depends on GPIO
+	help
+	  Enable support for Adafruit Seesaw gpio
+
+config SEESAW_PWM
+	bool "Seesaw PWM"
+	default y
+	depends on DT_HAS_ADAFRUIT_SEESAW_PWM_ENABLED
+	depends on PWM
+	help
+	  Enable support for Adafruit Seesaw PWM
+
+config SEESAW_INPUT_KEYPAD
+	bool "Seesaw keypad input"
+	default y
+	depends on DT_HAS_ADAFRUIT_SEESAW_KEYPAD_ENABLED
+	depends on INPUT
+	help
+	  Enable support for Adafruit Seesaw keypad input
+
+if SEESAW_INPUT_KEYPAD
+
+config SEESAW_INPUT_KEYPAD_POLL_INTERVAL
+	int "Event poll interval (ms)"
+	default 25
+
+endif
+
+config SEESAW_NEOPIXEL
+	bool "Seesaw neopixel leds"
+	default y
+	depends on DT_HAS_ADAFRUIT_SEESAW_NEOPIXEL_ENABLED
+	depends on LED
+
+config SEESAW_EEPROM
+	bool "Seesaw EEPROM"
+	default y
+	depends on DT_HAS_ADAFRUIT_SEESAW_EEPROM_ENABLED
+	depends on EEPROM
+
+endif

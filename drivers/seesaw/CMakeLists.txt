@@ -1,0 +1,6 @@
+zephyr_library_sources_ifdef(CONFIG_SEESAW seesaw.c)
+zephyr_library_sources_ifdef(CONFIG_SEESAW_GPIO seesaw_gpio.c)
+zephyr_library_sources_ifdef(CONFIG_SEESAW_PWM seesaw_pwm.c)
+zephyr_library_sources_ifdef(CONFIG_SEESAW_INPUT_KEYPAD seesaw_keypad.c)
+zephyr_library_sources_ifdef(CONFIG_SEESAW_NEOPIXEL seesaw_neopixel.c)
+zephyr_library_sources_ifdef(CONFIG_SEESAW_EEPROM seesaw_eeprom.c)

@@ -1,0 +1,14 @@
+# Copyright (c) 2025 Titouan Christophe
+# SPDX-License-Identifier: Apache-2.0
+
+description: Adafruit Seesaw eeprom
+
+compatible: "adafruit,seesaw-eeprom"
+
+properties:
+  size:
+    required: true
+    type: int
+    description: |
+      Size of the eeprom, in Bytes
+

@@ -1,0 +1,33 @@
+&seesaw_i2c {
+    seesaw@49 {
+        compatible = "adafruit,seesaw";
+        reg = <0x49>;
+        status = "okay";
+
+        seesaw_gpio: gpio {
+            compatible = "adafruit,seesaw-gpio";
+            #gpio-cells = <2>;
+            gpio-controller;
+        };
+
+        seesaw_pwm: pwm {
+            compatible = "adafruit,seesaw-pwm";
+            #pwm-cells = <3>;
+            pwm-controller;
+        };
+
+        seesaw_eeprom: eeprom {
+            compatible = "adafruit,seesaw-eeprom";
+            size = <128>;
+        };
+
+        seesaw_leds: leds {
+            compatible = "gpio-leds";
+
+            seesaw_red_led: red-led {
+                gpios = <&seesaw_gpio 5 GPIO_ACTIVE_HIGH>;
+                label = "RED_LED";
+            };
+        };
+    };
+};

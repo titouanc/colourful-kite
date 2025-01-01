@@ -1,0 +1,8 @@
+# Copyright (c) 2025 Titouan Christophe
+# SPDX-License-Identifier: Apache-2.0
+
+description: Adafruit Seesaw module
+
+compatible: "adafruit,seesaw"
+
+include: [i2c-device.yaml]

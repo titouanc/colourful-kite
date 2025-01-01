@@ -1,0 +1,10 @@
+seesaw_i2c: &arduino_i2c {};
+#include <samples/neotrellis.dtsi>
+
+&neotrellis_keypad {
+    status = "okay";
+};
+
+&neotrellis_leds {
+    status = "okay";
+};

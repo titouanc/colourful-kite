@@ -1,0 +1,16 @@
+# Copyright (c) 2025 Titouan Christophe
+# SPDX-License-Identifier: Apache-2.0
+
+description: Adafruit Seesaw gpio
+
+compatible: "adafruit,seesaw-gpio"
+
+include: [gpio-controller.yaml]
+
+properties:
+  "#gpio-cells":
+    const: 2
+
+gpio-cells:
+  - pin
+  - flags
